@@ -18,7 +18,13 @@ This is a [Hugo](https://gohugo.io) theme component that automatically generates
   socialImage = "path/to/the/twitter/card/image"
 ```
 
-3. Include the `social_metadata.html` partial in your `head.html` like so: `{{ partial "social_metadata.html" . }}`.
+3. Include the `hugo-social-metadata` theme as the leftmost element of the theme list variable in your config file. For `config.toml`, it will look something like this:
+
+```toml
+theme = ["hugo-social-metadata", "hyde"]
+```
+
+4. Include the `social_metadata.html` partial in your `head.html` like so: `{{ partial "social_metadata.html" . }}`.
 
 ## Additional customizations
 
