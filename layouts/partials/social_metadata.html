@@ -1,7 +1,9 @@
 <!-- Configure meta and title tags -->
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:site" content="@msf_jarvis" />
+{{ if .Site.Params.TwitterUsername }}
+<meta name="twitter:site" content="{{ .Site.Params.TwitterUsername }}" />
+{{ end }}
 {{ if .IsHome }}
 <title>{{ .Site.Title }}</title>
 <meta name="description" content="{{ $.Site.Params.description }}" />
