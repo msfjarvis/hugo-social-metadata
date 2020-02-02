@@ -1,0 +1,41 @@
+<!-- Configure meta and title tags -->
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@msf_jarvis" />
+{{ if .IsHome }}
+<title>{{ .Site.Title }}</title>
+<meta name="description" content="{{ $.Site.Params.description }}" />
+<meta name="keywords" content="{{ $.Site.Params.Keywords }}" />
+<meta property="og:image" content="{{ .Site.Params.SocialImage }}" />
+<meta property="og:url" content="{{ .Site.BaseURL }}" />
+<meta property="og:title" content="{{ .Site.Title }}" />
+<meta name="og:description" content="{{ $.Site.Params.description }}" />
+<meta name="twitter:title" content="{{ .Site.Title }}" />
+<meta name="twitter:description" content="{{ $.Site.Params.description }}" />
+<meta name="twitter:url" content="{{ .Site.BaseURL }}" />
+<meta name="twitter:image:src" content="{{ .Site.Params.SocialImage }}" />
+{{ else }}
+<title>{{ .Title }} &middot; {{ .Site.Title }}</title>
+<meta name="description" content="{{ .Description }}" />
+{{ if .Params.tags }}
+<meta name="keywords" content="{{ range .Params.tags }}{{ . }},{{ end }}" />
+{{ else }}
+<meta name="keywords" content="{{ $.Site.Params.Keywords }}" />
+{{ end }}
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:title" content="{{ .Title }} &middot; {{ .Site.Title }}" />
+<meta name="twitter:title" content="{{ .Title }} &middot; {{ .Site.Title }}" />
+{{ if .Description }}
+<meta name="og:description" content="{{ .Description }}" />
+<meta name="twitter:description" content="{{ .Description }}" />
+{{ else }}
+<meta name="og:description" content="{{ $.Site.Params.description }}" />
+<meta name="twitter:description" content="{{ $.Site.Params.description }}" />
+{{ end }}
+<meta name="twitter:url" content="{{ .Permalink }}" />
+{{ if .Params.SocialImage }}
+<meta name="twitter:image:src" content="{{ .Site.BaseURL }}{{ .Params.SocialImage }}" />
+{{ else }}
+<meta name="twitter:image:src" content="{{ .Site.Params.SocialImage }}" />
+{{ end }}
+{{ end }}
