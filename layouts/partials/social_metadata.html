@@ -1,6 +1,10 @@
 <!-- Configure meta and title tags -->
 <meta property="og:type" content="website" />
+{{ if .Site.Params.TwitterCardType }}
+<meta name="twitter:card" content="{{ .Site.Params.TwitterCardType }}" />
+{{ else }}
 <meta name="twitter:card" content="summary_large_image" />
+{{ end }}
 {{ if .Site.Params.TwitterUsername }}
 <meta name="twitter:site" content="{{ .Site.Params.TwitterUsername }}" />
 {{ end }}
