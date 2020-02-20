@@ -1,0 +1,12 @@
+name = "Hugo Social Metadata"
+license = "MIT"
+licenselink = "https://github.com/msfjarvis/hugo-social-metadata/blob/master/LICENSE"
+description = "Hugo theme component that automatically generates metadata for Twitter's cards and Facebook's Open Graph protocol"
+homepage = "http://example.com/"
+tags = ["component", "social metadata"]
+features = ["twitter cards", "open graph protocol"]
+min_version = "0.41"
+
+[author]
+  name = "Harsh Shandilya"
+  homepage = "https://msfjarvis.dev"
