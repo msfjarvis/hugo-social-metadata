@@ -1,25 +1,20 @@
 <!-- Configure meta and title tags -->
 <meta property="og:type" content="website" />
 {{ if .Site.Params.TwitterCardType }}
-<meta name="twitter:card" content="{{ .Site.Params.TwitterCardType }}" />
+<meta name="twitter:card" content="{{ .Site.Params.TwitterCardType }}" key="twcard" />
 {{ else }}
-<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:card" content="summary_large_image" key="twcard" />
 {{ end }}
 {{ if .Site.Params.TwitterUsername }}
-<meta name="twitter:site" content="{{ .Site.Params.TwitterUsername }}" />
+<meta name="twitter:site" content="{{ .Site.Params.TwitterUsername }}" key="twhandle" />
 {{ end }}
 {{ if .IsHome }}
 <title>{{ .Site.Title }}</title>
 <meta name="description" content="{{ $.Site.Params.description }}" />
 <meta name="keywords" content="{{ $.Site.Params.Keywords }}" />
-<meta property="og:image" content="{{ .Site.BaseURL}}{{ .Site.Params.SocialImage }}" />
-<meta property="og:url" content="{{ .Site.BaseURL }}" />
-<meta property="og:title" content="{{ .Site.Title }}" />
-<meta name="og:description" content="{{ $.Site.Params.description }}" />
-<meta name="twitter:title" content="{{ .Site.Title }}" />
-<meta name="twitter:description" content="{{ $.Site.Params.description }}" />
-<meta name="twitter:url" content="{{ .Site.BaseURL }}" />
-<meta name="twitter:image:src" content="{{ .Site.BaseURL}}{{ .Site.Params.SocialImage }}" />
+<meta property="og:url" content="{{ .Site.BaseURL }}" key="ogurl" />
+<meta property="og:title" content="{{ .Site.Title }}" key="ogtitle" />
+<meta name="og:description" content="{{ $.Site.Params.description }}" key="ogdesc" />
 {{ else }}
 <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
 <meta name="description" content="{{ .Description }}" />
@@ -30,18 +25,15 @@
 {{ end }}
 <meta property="og:url" content="{{ .Permalink }}" />
 <meta property="og:title" content="{{ .Title }} &middot; {{ .Site.Title }}" />
-<meta name="twitter:title" content="{{ .Title }} &middot; {{ .Site.Title }}" />
 {{ if .Description }}
 <meta name="og:description" content="{{ .Description }}" />
-<meta name="twitter:description" content="{{ .Description }}" />
 {{ else }}
 <meta name="og:description" content="{{ $.Site.Params.description }}" />
-<meta name="twitter:description" content="{{ $.Site.Params.description }}" />
 {{ end }}
 <meta name="twitter:url" content="{{ .Permalink }}" />
 {{ if .Params.SocialImage }}
-<meta name="twitter:image:src" content="{{ .Site.BaseURL }}{{ .Params.SocialImage }}" />
+<meta property="og:image" content="{{ .Site.BaseURL }}{{ .Params.SocialImage }}" key="ogimage" />
 {{ else }}
-<meta name="twitter:image:src" content="{{ .Site.Params.SocialImage }}" />
+<meta property="og:image" content="{{ .Site.BaseURL}}{{ .Site.Params.SocialImage }}" key="ogimage" />
 {{ end }}
 {{ end }}
