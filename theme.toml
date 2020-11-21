@@ -1,6 +1,6 @@
 name = "Hugo Social Metadata"
 license = "MIT"
-licenselink = "https://github.com/msfjarvis/hugo-social-metadata/blob/master/LICENSE"
+licenselink = "https://github.com/msfjarvis/hugo-social-metadata/blob/main/LICENSE"
 description = "Hugo theme component that automatically generates metadata for Twitter's cards and Facebook's Open Graph protocol"
 homepage = "http://example.com/"
 tags = ["component", "social metadata"]
