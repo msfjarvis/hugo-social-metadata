@@ -36,4 +36,5 @@
 {{ else }}
 <meta property="og:image" content="{{ .Site.BaseURL}}{{ .Site.Params.SocialImage }}" key="ogimage" />
 {{ end }}
+<link rel="canonical" href="{{ .RelPermalink }}" />
 {{ end }}
