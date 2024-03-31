@@ -10,19 +10,11 @@
 {{ end }}
 {{ if .IsHome }}
 <title>{{ .Site.Title }}</title>
-<meta name="description" content="{{ $.Site.Params.description }}" />
-<meta name="keywords" content="{{ $.Site.Params.Keywords }}" />
 <meta property="og:url" content="{{ .Site.BaseURL }}" key="ogurl" />
 <meta property="og:title" content="{{ .Site.Title }}" key="ogtitle" />
 <meta name="og:description" content="{{ $.Site.Params.description }}" key="ogdesc" />
 {{ else }}
 <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
-<meta name="description" content="{{ .Description }}" />
-{{ if .Params.tags }}
-<meta name="keywords" content="{{ range .Params.tags }}{{ . }},{{ end }}" />
-{{ else }}
-<meta name="keywords" content="{{ $.Site.Params.Keywords }}" />
-{{ end }}
 <meta property="og:url" content="{{ .Permalink }}" />
 <meta property="og:title" content="{{ .Title }} &middot; {{ .Site.Title }}" />
 {{ if .Description }}
