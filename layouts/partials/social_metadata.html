@@ -24,8 +24,16 @@
 {{ end }}
 <meta name="twitter:url" content="{{ .Permalink }}" />
 {{ if .Params.SocialImage }}
-<meta property="og:image" content="{{ .Site.BaseURL }}{{ .Params.SocialImage }}" key="ogimage" />
+{{ $socialImage := .Resources.GetMatch .Params.SocialImage }}
+{{ if $socialImage }}
+<!-- File was in the page bundle -->
+<meta property="og:image" content="{{ .Params.SocialImage }}" key="ogimage" />
 {{ else }}
+<!-- File was not in the page bundle, assume it exists at the root -->
+<meta property="og:image" content="{{ .Site.BaseURL }}{{ .Params.SocialImage }}" key="ogimage" />
+{{ end }}
+{{ else }}
+<!-- The socialImage attribute doesn't exist on the page, resolve it from the root -->
 <meta property="og:image" content="{{ .Site.BaseURL}}{{ .Site.Params.SocialImage }}" key="ogimage" />
 {{ end }}
 <link rel="canonical" href="{{ .Permalink }}" />
